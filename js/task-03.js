@@ -13,16 +13,25 @@ const images = [
 	},
 ];
 
-const galleryList = document.getElementsByClassName(`gallery`);
+/* const galleryList = document.querySelector(`.gallery`);
 
 images.forEach((image) => {
-	
-	console.log = image.url
-	console.log = image.alt
 
 	const galleryItem = document.createElement(`li`);
 	const imageItem = document.createElement(`img`);
 	imageItem.src = image.url;
-	//imageItem.insertAdjacentHTML = image.alt;
-	galleryList.appendChild(galleryItem.appendChild(imageItem));
-});
+	imageItem.alt =image.alt;
+	galleryItem.appendChild(imageItem);
+	galleryList.appendChild(galleryItem);
+	
+}); */
+ 
+//-----------var with insertAdjacentHTML().
+
+const galleryList = document.querySelector(`.gallery`);
+
+	const galleryElemets = images
+		.map((image) => `<li><img src='${image.url} alt='${image.alt}'></img></li>`)
+		.join("");
+	galleryList.insertAdjacentHTML("beforebegin",galleryElemets);
+
