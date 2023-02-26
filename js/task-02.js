@@ -13,3 +13,4 @@ const ingredientsHtml = ingredients
 	.join('');
 
 	ingredientsList.innerHTML = ingredientsHtml;
+	
